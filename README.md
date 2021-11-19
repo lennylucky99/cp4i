@@ -4,8 +4,8 @@
 
 <h2>OpenShift Related Tools</h2>:
   <li>openshift official github: 
-    https://github.com/openshift
-    https://github.com/RedHatOfficial
+    <li>https://github.com/openshift</li>
+    <li>https://github.com/RedHatOfficial</li>
   </li>
   <li>RedHat OpenShift Helper Node: https://github.com/RedHatOfficial/ocp4-helpernode#quickstarts</li>
   
