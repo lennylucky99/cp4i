@@ -19,3 +19,7 @@ amd64 digest: sha256:4f12dc9ca504f69e149ea4c6c897c33b3de7f53087f7fa318aaae075fbe
 <code>
 oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"storage":{"pvc":{"claim":"{<changeme>}"}}}}'  
 </code>
+  <li>Disable default operator source. This only needs to be done once for a cluster.</li>
+  <code>
+oc patch OperatorHub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": true}]'
+  </code>
