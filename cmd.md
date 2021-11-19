@@ -4,3 +4,11 @@
 <code>
   jq -s &#39;{&quot;auths&quot;: ( .[0].auths + .[1].auths ) }&#39; mirror-registry-pullsecret.json redhat-pullsecret.json &gt; pullsecret.json
 </code>
+  <li>Show Openshift marketplace image SHA </li>
+ <code>
+oc -n openshift-marketplace get pod -o yaml $(oc -n openshift-marketplace get pods | grep opencloud-operators | cut -d " " -f 1) | grep imageID
+  </code>
+  The SHAs for this build are as follows:
+Catalog digest: sha256:6069dabd079438019990ca437648f609d939a59745fb092f9b783cc379942350
+amd64 digest: sha256:4f12dc9ca504f69e149ea4c6c897c33b3de7f53087f7fa318aaae075fbe6d75c
+  
