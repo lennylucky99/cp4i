@@ -6,10 +6,9 @@
   <li>opm and openshift client: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/latest-4.6/?extIdCarryOver=true&sc_cid=701f2000001Css5AAC</li>
   <li>Installing OPM CLI from image</li>
   <pre><code>
-oc image extract registry.redhat.io/openshift4/ose-operator-registry:v4.6 --registry-config='~/openshift/pull-secret-full.json' --path /usr/bin/opm:. --confirm
+    oc image extract registry.redhat.io/openshift4/ose-operator-registry:v4.6 --registry-config='~/openshift/pull-secret-full.json' --path /usr/bin/opm:. --confirm
     sudo chmod +x opm
-    sudo mv opm /usr/local/bin
-    
+    sudo mv opm /usr/local/bin  
  </code></pre>
   </ul>
 <h2>OpenShift Related Tools</h2>:
