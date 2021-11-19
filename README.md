@@ -35,4 +35,7 @@
     <li>https://github.com/dwojciec/OLM-disconnected</li>
     <li>https://github.com/operator-framework/</li>
     <li>https://github.com/openshift-telco/ocp4-offline-operator-mirror</li>
+    <li>Deploy GPU Operators in a disconnected or airgapped environment:<br>
+https://docs.nvidia.com/datacenter/cloud-native/openshift/mirror-gpu-ocp-disconnected.html
+    </li>
   </ul>
