@@ -1,6 +1,6 @@
-<h0># cp4i<h0>
-<h1>Container Related Tools</h1>:
-1. Buildah -- building OCI images: https://github.com/containers/buildah
+<h1># cp4i<h1>
+<h2>Container Related Tools</h2>:
+  <li>Buildah -- building OCI images: https://github.com/containers/buildah</li>
 
-<h1>OpenShift Related Tools<h1>:
-1. RedHat OpenShift Helper Node: https://github.com/RedHatOfficial/ocp4-helpernode#quickstarts
+<h2>OpenShift Related Tools<h2>:
+  <li>RedHat OpenShift Helper Node: https://github.com/RedHatOfficial/ocp4-helpernode#quickstarts</li>
