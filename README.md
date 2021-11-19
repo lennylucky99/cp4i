@@ -7,9 +7,10 @@
   <li>Installing OPM CLI from image</li>
   <code>
 oc image extract registry.redhat.io/openshift4/ose-operator-registry:v4.6 --registry-config='~/openshift/pull-secret-full.json' --path /usr/bin/opm:. --confirm
-sudo chmod +x opm
-sudo mv opm /usr/local/bin
-</code>
+<br>sudo chmod +x opm
+<br>sudo mv opm /usr/local/bin
+<br>
+ </code>
   </ul>
 <h2>OpenShift Related Tools</h2>:
   <ul>
