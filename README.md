@@ -11,7 +11,7 @@
     </ul>
     <li>RedHat OpenShift Helper Node: https://github.com/RedHatOfficial/ocp4-helpernode#quickstarts</li>
   </ul>
-  <h3> About Infrascture Node </h3>
+  <h5> About Infrascture Node </h5>
   <ul>
     <li>https://tinyexplosions.com/posts/infra-nodes/
   </ul>
