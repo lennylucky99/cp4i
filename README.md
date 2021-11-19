@@ -19,3 +19,7 @@
   <ul>
     <li>https://hewlettpackard.github.io/OpenShift-on-SimpliVity/post-deploy/expose-registry.html#add-a-route-for-the-image-registry</li>
   </ul>
+   <h5> Airgap Installation OpenShift Operator </h5>
+  <ul>
+    <li>https://zhimin-wen.medium.com/airgap-installation-for-openshift-operators-fb0a3cad8731</li>
+  </ul>
