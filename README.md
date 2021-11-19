@@ -15,3 +15,7 @@
   <ul>
     <li>https://tinyexplosions.com/posts/infra-nodes/
   </ul>
+ <h5> About Internal Image Registry </h5>
+  <ul>
+    <li>https://hewlettpackard.github.io/OpenShift-on-SimpliVity/post-deploy/expose-registry.html#add-a-route-for-the-image-registry</li>
+  </ul>
