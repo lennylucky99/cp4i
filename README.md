@@ -24,4 +24,5 @@
     <li>https://zhimin-wen.medium.com/airgap-installation-for-openshift-operators-fb0a3cad8731</li>
     <li>https://examples.openshift.pub/operators/air-gapped-pre-4.6/</li>
     <li>https://github.com/dwojciec/OLM-disconnected</li>
+    <li>https://github.com/operator-framework/</li>
   </ul>
