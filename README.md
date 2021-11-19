@@ -9,7 +9,7 @@
       <li>https://github.com/openshift</li>
       <li>https://github.com/RedHatOfficial</li>
     </ul>
-    <li>RedHat OpenShift Helper Node(helps set up an "all-in-one" node): https://github.com/RedHatOfficial/ocp4-helpernode#quickstarts</li>
+    <li>RedHat OpenShift Helper Node(helps set up an "all-in-one" node with tools/service to install OCP4): https://github.com/RedHatOfficial/ocp4-helpernode#quickstarts</li>
   </ul>
   <h5> About Infrascture Node </h5>
   <ul>
