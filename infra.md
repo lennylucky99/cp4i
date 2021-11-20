@@ -9,8 +9,7 @@
 <br>Procedure:
   <ul>
     <li>Define a infra MCP definition below will find all MachineConfigs labeled both "worker" and "infra" and it will apply them to any Machines or Nodes that have the "infra" role label. In this manner, you will ensure that your infra nodes can upgrade without the "worker" role label.</li>
-    <pre><code>
-apiVersion: machineconfiguration.openshift.io/v1
+    <pre><code>apiVersion: machineconfiguration.openshift.io/v1
     kind: MachineConfigPool
 metadata:
   name: infra
@@ -20,26 +19,18 @@ spec:
       - {key: machineconfiguration.openshift.io/role, operator: In, values: [worker,infra]}
   nodeSelector:
     matchLabels:
-      node-role.kubernetes.io/infra: ""
-    </code></pre>
+      node-role.kubernetes.io/infra: ""</code></pre>
   <li>Without MCP, you could define app and infr node </li>
     <ul>
       <li>Add a label to the worker node(s) you wish to act as app node(s):</li>
-      <pre><code>
-      $ oc label node <node-name> node-role.kubernetes.io/app=""
-      </code></pre>
+      <pre><code>$ oc label node <node-name> node-role.kubernetes.io/app=""</code></pre>
       <li>Add a label to the worker node(s) you wish to act as infra node(s):</li>
-      <pre><code>
-      $ oc label node <node-name> node-role.kubernetes.io/infra=""
-      </code></pre>
+      <pre><code>$ oc label node <node-name> node-role.kubernetes.io/infra=""</code></pre>
       <li>Add a label to machine set to act as infra node(s) :</li>
-      <pre><code>
-      $ oc patch machineset $MACHINESET_INFRA  --type=merge -p '{"spec":{"template":{"spec":{"metadata":{"labels":{"node-role.kubernetes.io/infra":""}}}}}}'
-      </code></pre>
+      <pre><code>$ oc patch machineset $MACHINESET_INFRA  --type=merge -p '{"spec":{"template":{"spec":{"metadata":{"labels":{"node-role.kubernetes.io/infra":""}}}}}}'</code></pre>
     </ul>
   <li>An example MachineSet with the required nodeSelector and taints applied might look like this:</li>
-  <pre><code>
-  spec:
+  <pre><code>spec:
   replicas: 1
   selector:
     matchLabels:
@@ -62,8 +53,7 @@ spec:
         value: reserved
       - effect: NoExecute
         key: infra
-        value: reserved
-    </code></pre>
+        value: reserved</code></pre>
     
  <li>You could move Router, image registry, monitoring and logging etc to the infr node. </li>
   <ul>
@@ -72,8 +62,7 @@ spec:
 	$ oc patch scheduler cluster --type=merge -p '{"spec":{"defaultNodeSelector":"node-role.kubernetes.io/app="}}'
     </code></pre>
     <li>You could use following spec to	move workload to the infr node:</li>
-	<pre><code>
-  spec:
+	<pre><code>spec:
   nodePlacement:
     nodeSelector:
       matchLabels:
@@ -84,20 +73,14 @@ spec:
       value: reserved
     - effect: NoExecute
       key: infra
-      value: reserved
-    </code></pre>
+      value: reserved</code></pre>
     <li>move ingresscontroller/default</li>
-    <pre><code>
-	  oc patch ingresscontroller/default -n  openshift-ingress-operator  --type=merge -p '{"spec":{"nodePlacement": {"nodeSelector": {"matchLabels": {"node-role.kubernetes.io/infra": ""}},"tolerations": [{"effect":"NoSchedule","key": "infra","value": "reserved"},{"effect":"NoExecute","key": "infra","value": "reserved"}]}}}'
-	  oc patch ingresscontroller/default -n openshift-ingress-operator --type=merge -p '{"spec":{"replicas": 3}}'
-	  </code></pre>
+    <pre><code>oc patch ingresscontroller/default -n  openshift-ingress-operator  --type=merge -p '{"spec":{"nodePlacement": {"nodeSelector": {"matchLabels": {"node-role.kubernetes.io/infra": ""}},"tolerations": [{"effect":"NoSchedule","key": "infra","value": "reserved"},{"effect":"NoExecute","key": "infra","value": "reserved"}]}}}'
+    oc patch ingresscontroller/default -n openshift-ingress-operator --type=merge -p '{"spec":{"replicas": 3}}'</code></pre>
 	  <li>move internal registry:</li>
-    <pre><code>
-	  oc patch configs.imageregistry.operator.openshift.io/cluster --type=merge -p '{"spec":{"nodeSelector": {"node-role.kubernetes.io/infra": ""},"tolerations": [{"effect":"NoSchedule","key": "infra","value": "reserved"},{"effect":"NoExecute","key": "infra","value": "reserved"}]}}'
-	  </code></pre>
+    <pre><code>oc patch configs.imageregistry.operator.openshift.io/cluster --type=merge -p '{"spec":{"nodeSelector": {"node-role.kubernetes.io/infra": ""},"tolerations": [{"effect":"NoSchedule","key": "infra","value": "reserved"},{"effect":"NoExecute","key": "infra","value": "reserved"}]}}'</code></pre>
 	  <li>move monitoring:</li>
-    <pre><code>
-apiVersion: v1
+    <pre><code>apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cluster-monitoring-config
@@ -183,8 +166,7 @@ data:
         effect: NoSchedule
       - key: infra
         value: reserved
-        effect: NoExecut
-</code></pre>
+        effect: NoExecut</code></pre>
 </ul>
 </ul>
 
