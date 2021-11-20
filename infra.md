@@ -1,5 +1,5 @@
 <h2> Set up Infrastructure Node and move workload</h2>
-<h3>Set up Infrastrcture Node and you will have the following benefits:<h3>
+<h3>Set up Infrastrcture Node and you will have the following benefits:</h3>
   <ul>
     <li>Prevent incurring billing costs against subscription counts</li>
     <li>Separate maintenance and management. </li>
