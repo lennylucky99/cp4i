@@ -1,5 +1,5 @@
-<h2> Set up Infrastructure Node and move workload
-<h5>Set up Infrastrcture Node and you will have the following benefits:
+<h2> Set up Infrastructure Node and move workload</h2>
+<h3>Set up Infrastrcture Node and you will have the following benefits:<h3>
   <ul>
     <li>Prevent incurring billing costs against subscription counts</li>
     <li>Separate maintenance and management. </li>
@@ -188,6 +188,6 @@ data:
 </ul>
 </ul>
 
-<h5>Ref:</h5>
+<h3>Ref:</h3>
  		<li>https://access.redhat.com/solutions/5034771</li>
     <li>https://mp.weixin.qq.com/s/uTnDJ7-6JVTWz-mlyULnqg</li>
