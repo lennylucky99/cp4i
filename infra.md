@@ -166,30 +166,21 @@ data:
         value: reserved
         effect: NoExecut</code></pre>
 	<li>Moving the cluster logging resources, Edit the Cluster Logging Custom Resource in the openshift-logging project:</li>
-	<pre><code>$ oc edit ClusterLogging instance
-	apiVersion: logging.openshift.io/v1
+	<pre><code>$oc edit ClusterLogging instance
+apiVersion: logging.openshift.io/v1
 kind: ClusterLogging
-
-....
-
+...
 spec:
   collection:
     logs:
       fluentd:
         resources: null
       type: fluentd
-  curation:
-    curator:
-      nodeSelector: 
-          node-role.kubernetes.io/infra: ''
-      resources: null
-      schedule: 30 3 * * *
-    type: curator
   logStore:
     elasticsearch:
       nodeCount: 3
       nodeSelector: 
-          node-role.kubernetes.io/infra: ''
+        node-role.kubernetes.io/infra: ''
       redundancyPolicy: SingleRedundancy
       resources:
         limits:
@@ -204,13 +195,14 @@ spec:
   visualization:
     kibana:
       nodeSelector: 
-          node-role.kubernetes.io/infra: '' 
+        node-role.kubernetes.io/infra: ''
       proxy:
         resources: null
       replicas: 1
       resources: null
     type: kibana
-....</code></pre>
+...
+</code></pre>
 </ul>
 </ul>
 
