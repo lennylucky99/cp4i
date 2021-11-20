@@ -165,9 +165,7 @@ data:
       - key: infra
         value: reserved
         effect: NoExecut</code></pre>
-	<li>Moving the cluster logging resources</li>
-	<ul>
-	<li>Edit the Cluster Logging Custom Resource in the openshift-logging project:</li>
+	<li>Moving the cluster logging resources, Edit the Cluster Logging Custom Resource in the openshift-logging project:</li>
 	<pre><code>$ oc edit ClusterLogging instance
 	apiVersion: logging.openshift.io/v1
 kind: ClusterLogging
@@ -213,7 +211,6 @@ spec:
       resources: null
     type: kibana
 ....</code></pre>
-</ul>
 </ul>
 </ul>
 
