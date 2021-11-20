@@ -176,9 +176,30 @@ spec:
       fluentd:
         resources: null
       type: fluentd
+  curation:
+    curator:
+	  tolerations:
+        key: infra
+        value: reserved
+        effect: NoSchedule
+        key: infra
+        value: reserved
+        effect: NoExecut
+      nodeSelector: 
+          node-role.kubernetes.io/infra: ''
+      resources: null
+      schedule: 30 3 * * *
+    type: curator
   logStore:
     elasticsearch:
       nodeCount: 3
+	  tolerations:
+        key: infra
+        value: reserved
+        effect: NoSchedule
+        key: infra
+        value: reserved
+        effect: NoExecut
       nodeSelector: 
         node-role.kubernetes.io/infra: ''
       redundancyPolicy: SingleRedundancy
@@ -194,6 +215,13 @@ spec:
   managementState: Managed
   visualization:
     kibana:
+	  tolerations:
+        key: infra
+        value: reserved
+        effect: NoSchedule
+        key: infra
+        value: reserved
+        effect: NoExecut
       nodeSelector: 
         node-role.kubernetes.io/infra: ''
       proxy:
