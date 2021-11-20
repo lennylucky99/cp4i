@@ -8,7 +8,7 @@
   </ul>
 
   <ul>
-    <li>Define a infra MCP definition below will find all MachineConfigs labeled both "worker" and "infra" and it will apply them to any Machines or Nodes that have the "infra" role label. In this manner, you will ensure that your infra nodes can upgrade without the "worker" role label.</li?
+    <li>Define a infra MCP definition below will find all MachineConfigs labeled both "worker" and "infra" and it will apply them to any Machines or Nodes that have the "infra" role label. In this manner, you will ensure that your infra nodes can upgrade without the "worker" role label.</li>
     <pre><code>
 apiVersion: machineconfiguration.openshift.io/v1
     kind: MachineConfigPool
