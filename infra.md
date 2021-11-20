@@ -58,9 +58,7 @@ spec:
  <li>You could move Router, image registry, monitoring and logging etc to the infr node. </li>
   <ul>
     <li>Specify the defaultNodeSelector to deploy pods on worker nodes by default would look like:</li>
-    <pre><code>
-	$ oc patch scheduler cluster --type=merge -p '{"spec":{"defaultNodeSelector":"node-role.kubernetes.io/app="}}'
-    </code></pre>
+    <pre><code>$ oc patch scheduler cluster --type=merge -p '{"spec":{"defaultNodeSelector":"node-role.kubernetes.io/app="}}'</code></pre>
     <li>You could use following spec to	move workload to the infr node:</li>
 	<pre><code>spec:
   nodePlacement:
