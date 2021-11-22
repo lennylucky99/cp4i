@@ -32,7 +32,7 @@ displays information about IP traffic. https://github.com/iptraf-ng/iptraf-ng </
       <li>Wireshark -- widely-used network protocol analyzer. https://www.wireshark.org/</li>
         <pre><code># yum -y install wireshark-gnome</code></pre>
       <li>tcpdump -- a powerful command-line packet analyzer. https://www.tcpdump.org/</li>
-      <pre><code>tcpdump -i eth1
+      <pre><code>      tcpdump -i eth1
       tcpdump host 210.27.48.1 
       tcpdump host helios and \( hot or ace \)
       tcpdump host 210.27.48.1 and \ (210.27.48.2 or 210.27.48.3 \) 
