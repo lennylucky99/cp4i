@@ -21,7 +21,7 @@
         <li> -I INTERFACE	Send echo requests out INTERFACE </li>
         <li> -c COUNT	Send only COUNT echo requests </li>
         <li> -W TIMEOUT	Wait TIMEOUT seconds before quitting </li>
-      <ul>
+      </ul>
       <li>Nmap -- Network discovery and security auditing. could find open port</li>
       <pre><code>nmap -n 192.168.137.0/24
       nmap -n -sU 192.168.137.130
