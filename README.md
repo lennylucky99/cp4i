@@ -8,6 +8,8 @@
 yum install docker</code></pre>
     <li>Install Podman. https://podman.io/getting-started/installation.html</li>
     <pre><code>sudo yum -y install podman</code></pre>
+    <li>Install httpd-tools.</li>
+    <pre><code>sudo yum install httpd-tools</code></pre>
   <li>Buildah -- building OCI images: https://github.com/containers/buildah</li>
   <li>grpctl: https://github.com/fullstorydev/grpcurl/releases/download/v1.8.5/grpcurl_1.8.5_linux_x86_64.tar.gz</li>
   <li>opm and openshift client: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/latest-4.6/?extIdCarryOver=true&sc_cid=701f2000001Css5AAC</li>
