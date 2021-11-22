@@ -10,6 +10,43 @@
     sudo chmod +x opm
     sudo mv opm /usr/local/bin  
  </code></pre>
+    <li>Useful network utilities and tools</li>
+    <ul>
+      <li>Ping -- ICMP protocol to test connectivity, Option	Description</li>
+      <ul>
+        <li> -b   Broadcast to the network specified as an argumen </li>
+        <li> -t   Set the IP Time to Live </li>
+        <li> -n	Display host information numerically </li>
+        <li> -i INTERVAL	Specify the echo request interval in seconds (default is 1) </li>
+        <li> -I INTERFACE	Send echo requests out INTERFACE </li>
+        <li> -c COUNT	Send only COUNT echo requests </li>
+        <li> -W TIMEOUT	Wait TIMEOUT seconds before quitting </li>
+      <ul>
+      <li>Nmap -- Network discovery and security auditing. could find open port</li>
+      <pre><code>nmap -n 192.168.137.0/24
+      nmap -n -sU 192.168.137.130
+      nmap 127.0.0.1
+      </code></pre>
+      <li>iptraf-ng -- is a console-based network monitoring program for Linux that
+displays information about IP traffic. https://github.com/iptraf-ng/iptraf-ng </li>
+      <li>Wireshark -- widely-used network protocol analyzer. https://www.wireshark.org/</li>
+        <pre><code># yum -y install wireshark-gnome</code></pre>
+      <li>tcpdump -- a powerful command-line packet analyzer. https://www.tcpdump.org/</li>
+      <pre><code>tcpdump -i eth1
+      tcpdump host 210.27.48.1 
+      tcpdump host helios and \( hot or ace \)
+      tcpdump host 210.27.48.1 and \ (210.27.48.2 or 210.27.48.3 \) 
+      tcpdump ip host ace and not helios
+      tcpdump ip host 210.27.48.1 and ! 210.27.48.2
+      tcpdump -i eth0 src host hostname
+      tcpdump -i eth0 dst host hostname
+      tcpdump net ucb-ether
+      tcpdump 'gateway snup and (port ftp or ftp-data)'
+      tcpdump ip and not net localnet
+      tcpdump 'tcp[tcpflags] & (tcp-syn|tcp-fin) != 0 and not src and dst net localnet'
+      tcpdump 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
+      tcpdump tcp -i eth1 -t -s 0 -c 100 and dst port ! 22 and src net 192.168.1.0/24 -w ./target.cap
+      tcpdump  -XvvennSs 0 -i eth0 tcp[20:2]=0x4745 or tcp[20:2]=0x4854 -- get http packate</code></pre>
   </ul>
 <h2>OpenShift Related Tools</h2>:
   <ul>
