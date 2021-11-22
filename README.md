@@ -23,7 +23,7 @@
         <li> -W TIMEOUT	Wait TIMEOUT seconds before quitting </li>
       </ul>
       <li>Nmap -- Network discovery and security auditing. could find open port</li>
-      <pre><code>nmap -n 192.168.137.0/24
+      <pre><code>      nmap -n 192.168.137.0/24
       nmap -n -sU 192.168.137.130
       nmap 127.0.0.1
       </code></pre>
