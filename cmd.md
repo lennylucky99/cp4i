@@ -16,4 +16,5 @@ amd64 digest: sha256:4f12dc9ca504f69e149ea4c6c897c33b3de7f53087f7fa318aaae075fbe
   <li>Disable default operator source. This only needs to be done once for a cluster.</li>
   <pre><code>oc patch OperatorHub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": true}]'</code></pre>
   <li>Approve Pending CSR.</li>
-  <pre><code>oc get csr -o name | xargs oc adm certificate approve</code></pre>
+  <pre><code>oc get csr -o name | xargs oc adm certificate approve
+oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{{"\n"}}{{end}}{{end}}' | xargs oc adm certificate approve</code></pre>
