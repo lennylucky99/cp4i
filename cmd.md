@@ -18,3 +18,7 @@ amd64 digest: sha256:4f12dc9ca504f69e149ea4c6c897c33b3de7f53087f7fa318aaae075fbe
   <li>Approve Pending CSR.</li>
   <pre><code>oc get csr -o name | xargs oc adm certificate approve
 oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{{"\n"}}{{end}}{{end}}' | xargs oc adm certificate approve</code></pre>
+  <li>Install cephtool, run the following cmd</li>
+  <pre><code>oc patch OCSInitialization ocsinit -n openshift-storage --type json --patch  '[{ "op": "replace", "path": "/spec/enableCephTools", "value": true }]'</code></pre>
+after this cmd, under project openshift-storage there is a rook-ceph-tools pod，bash into the pod, could execute ceph cmd and check ceph cluster status.
+
