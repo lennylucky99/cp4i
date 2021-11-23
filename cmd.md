@@ -21,4 +21,5 @@ oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{
   <li>Install cephtool, run the following cmd</li>
   <pre><code>oc patch OCSInitialization ocsinit -n openshift-storage --type json --patch  '[{ "op": "replace", "path": "/spec/enableCephTools", "value": true }]'</code></pre>
 after this cmd, under project openshift-storage there is a rook-ceph-tools pod，bash into the pod, could execute ceph cmd and check ceph cluster status.
+  <li>Out-of-the-box CP4I platform admin user id/password</li><pre><code>oc extract secret/platform-auth-idp-credentials -n ibm-common-services --to=-</code></pre>
 
