@@ -193,7 +193,7 @@ spec:
   logStore:
     elasticsearch:
       nodeCount: 3
-	  tolerations:
+      tolerations:
         key: infra
         value: reserved
         effect: NoSchedule
@@ -215,7 +215,7 @@ spec:
   managementState: Managed
   visualization:
     kibana:
-	  tolerations:
+      tolerations:
         key: infra
         value: reserved
         effect: NoSchedule
