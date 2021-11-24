@@ -22,4 +22,6 @@ oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{
   <pre><code>oc patch OCSInitialization ocsinit -n openshift-storage --type json --patch  '[{ "op": "replace", "path": "/spec/enableCephTools", "value": true }]'</code></pre>
 after this cmd, under project openshift-storage there is a rook-ceph-tools pod，bash into the pod, could execute ceph cmd and check ceph cluster status.
   <li>Out-of-the-box CP4I platform admin user id/password</li><pre><code>oc extract secret/platform-auth-idp-credentials -n ibm-common-services --to=-</code></pre>
+   <li>Add default router log level</li><pre><code>oc patch dc -n default router -p '[{"op": "add", "path": "/spec/template/spec/containers/0/args", "value":["--loglevel=4"]}]' --type=json</code></pre>
+   <li>Remove default router log level</li><pre><codeoc patch dc -n default router -p '[{"op": "remove", "path": "/spec/template/spec/containers/0/args", "value":["--loglevel=4"]}]' --type=json</code></pre>
 
