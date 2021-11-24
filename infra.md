@@ -231,6 +231,8 @@ spec:
     type: kibana
 ...
 </code></pre>
+<li>Set project default node selector to infra</li>
+<pre><code> $oc annotate namespace <project name> \>openshift.io/node-selector="node-role.kubernetes.io/infra=''" --overwrite</code></pre>
 </ul>
 </ul>
 
