@@ -1,4 +1,4 @@
-<p1> Mannually configure chrony service at each node:</p1>
+<h1> Mannually configure chrony service at each node:</h1>
 
 <ul>
 <li>default installed, if not</li>
@@ -20,11 +20,11 @@ timedatectl status</code></pre>
 chronyc sourcestats -v<pre><code>
 </ul>
 
-<p1>Leverage machineconfigure operator, ref https://docs.openshift.com/container-platform/4.8/installing/installing_bare_metal_ipi/ipi-install-post-installation-configuration.html</p1>
+<h1>Leverage machineconfigure operator, ref https://docs.openshift.com/container-platform/4.8/installing/installing_bare_metal_ipi/ipi-install-post-installation-configuration.html</h1>
 <ul>
 <li>set ntp source</li>
  <pre><code>$ CHRONY_HOST=chrony.example.internal</code></pre>
-2. generate master conf file 
+<li>generate master conf file</li> 
 <pre><code>$ cat << EOF >> chroney_master.conf 
 server ${CHRONY_HOST} iburst
 stratumweight 0
@@ -126,11 +126,11 @@ EOF</code></pre>
 <li>apply worker and masters machine configuration  or pre installation use  masters-chrony-configuration.yaml and 99_workers-chrony-configuration.yaml to replace openshift-install create manifests generated files</li>
 <pre><code>$ oc apply -f 99_masters-chrony-configuration.yaml
 $ oc apply -f 99_workers-chrony-configuration.yaml</code></pre>
+<li>check node status, it will restart</li>
+<pre><code>$ oc get nodes -l node-role.kubernetes.io/worker -w</code></pre>
+</ul>
 
-7. check
-$ oc get nodes -l node-role.kubernetes.io/worker -w
-
-mannually set in the node:
-$ oc debug node/<WORKER_NODE>
+<h1>mannually set in the node:</h1>
+<pre><code>$ oc debug node/<WORKER_NODE>
 sh-4.4# chroot /host
-sh-4.4# chronyc -4 -n sources
+sh-4.4# chronyc -4 -n sources</code></pre>
