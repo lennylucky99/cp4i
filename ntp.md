@@ -1,4 +1,4 @@
-<h1> Mannually configure chrony service at each node:</h1>
+<h2> Mannually configure chrony service at each node:</h2>
 
 <ul>
 <li>default installed, if not</li>
@@ -20,7 +20,8 @@ timedatectl status</code></pre>
 chronyc sourcestats -v<pre><code>
 </ul>
 
-<h1>Leverage machineconfigure operator, ref https://docs.openshift.com/container-platform/4.8/installing/installing_bare_metal_ipi/ipi-install-post-installation-configuration.html</h1>
+<h2>Leverage machineconfigure operator</h2>
+ref https://docs.openshift.com/container-platform/4.8/installing/installing_bare_metal_ipi/ipi-install-post-installation-configuration.html
 <ul>
 <li>set ntp source</li>
  <pre><code>$ CHRONY_HOST=chrony.example.internal</code></pre>
