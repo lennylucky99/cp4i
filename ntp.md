@@ -1,6 +1,6 @@
 <h1> Use Chrony to sync nodes for OpenShift</h1>
  
-<h2> Mannually configure chrony service at each node:</h2>
+<h2> Manually configure chrony service at each node:</h2>
 <ul>
 <li>default installed, if not</li>
 <pre><code>yum -y install chrony</code></pre>
