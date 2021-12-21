@@ -1,5 +1,5 @@
 <h2> Set up Infrastructure Node and move workload</h2>
-<h3>Set up Infrastrcture Node and you will have the following benefits:</h3>
+<h3>Set up Infrastructure Node and you will have the following benefits:</h3>
   <ul>
     <li>Prevent incurring billing costs against subscription counts</li>
     <li>Separate maintenance and management. </li>
@@ -26,6 +26,10 @@ spec:
       <pre><code>$ oc label node <node-name> node-role.kubernetes.io/app=""</code></pre>
       <li>Add a label to the worker node(s) you wish to act as infra node(s):</li>
       <pre><code>$ oc label node <node-name> node-role.kubernetes.io/infra=""</code></pre>
+      <li>Taint an infra node(s):</li>
+      <pre><code>$oc adm taint nodes -l node-role.kubernetes.io/infra infra=reserved:NoSchedule infra=reserved:NoExecute</code></pre>
+      <li>Untaint an infra node(s):</li>
+      <pre><code>$oc adm taint nodes -l node-role.kubernetes.io/infra:NoSchedule-</code></pre>
       <li>Add a label to machine set to act as infra node(s) :</li>
       <pre><code>$ oc patch machineset $MACHINESET_INFRA  --type=merge -p '{"spec":{"template":{"spec":{"metadata":{"labels":{"node-role.kubernetes.io/infra":""}}}}}}'</code></pre>
     </ul>
